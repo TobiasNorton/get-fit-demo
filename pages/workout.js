@@ -3,15 +3,8 @@ import { useState, useEffect } from 'react'
 import styles from '../styles/workout.module.scss'
 
 const Workout = () => {
-  // const [data, setData] = useState()
   const [chooseExerciseIsOpen, setChooseExerciseIsOpen] = useState(false)
-
-  // useEffect(() => {
-  //   console.log('lol fuck')
-  //   fetch('../data.json').then((response) => console.log(response))
-  // }, [])
-
-  useEffect(() => {})
+  const exercises = ['Rows', 'Late Pull-downs', 'Sit-ups', 'Squats', 'Bench Press', 'Curls']
 
   return (
     <div>
@@ -21,15 +14,12 @@ const Workout = () => {
         <button onClick={() => setChooseExerciseIsOpen(!chooseExerciseIsOpen)}>
           Choose Exercise from List
         </button>
+
         {chooseExerciseIsOpen && (
           <section>
-            <div>Rows</div>
-            <div>Lat Pull-downs</div>
-            <div>Push-ups</div>
-            <div>Sit-ups</div>
-            <div>Squats</div>
-            <div>Curls</div>
-            <div>Tricep Curls</div>
+            {exercises.map((exercise, index) => {
+              return <div key={`exercise-${index}`}>{exercise}</div>
+            })}
           </section>
         )}
 
@@ -56,7 +46,7 @@ const Workout = () => {
         }
 
         .no-exercises {
-          color: grey;
+          color: hsl(185, 0%, 65%);
         }
 
         .back-to-home {
