@@ -1,0 +1,52 @@
+[
+  {
+    "name": "John",
+    "daysAgo": 2,
+    "stage": "Device Purchased"
+  },
+  {
+    "name": "Hector",
+    "daysAgo": 2,
+    "stage": "Device Purchased"
+  },
+  {
+    "name": "Michelle",
+    "daysAgo": 4,
+    "stage": "Device Purchased"
+  },
+  {
+    "name": "Dylan",
+    "daysAgo": 8,
+    "stage": "Subscribed!"
+  },
+  {
+    "name": "Marta",
+    "daysAgo": 12,
+    "stage": "Subscribed!"
+  },
+  {
+    "name": "Hui",
+    "daysAgo": 14,
+    "stage": "Subscribed!"
+  },
+  {
+    "name": "Mike",
+    "daysAgo": 19,
+    "stage": "Subscribed!"
+  },
+  {
+    "name": "Terry",
+    "daysAgo": 20,
+    "stage": "Subscribed!"
+  },
+  {
+    "name": "Sarah",
+    "daysAgo": 26,
+    "stage": "Subscribed!"
+  },
+  {
+    "name": "Kirin",
+    "daysAgo": 27,
+    "stage": "Subscribed!"
+  }
+]

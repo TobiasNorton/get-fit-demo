@@ -1,14 +1,21 @@
 import { useState, useEffect } from 'react'
-import * as ReferralModal from 'react-modal'
+// import * as ReferralModal from 'react-modal'
+import ReferralModal from '../components/referral-modal'
 import { Formik, Field } from 'formik'
 // import styles from '../styles/app.module.scss'
 import Navigation from '../components/navigation'
 import Head from 'next/head'
 
-ReferralModal.setAppElement('#__next')
+// ReferralModal.setAppElement('#__next')
 
 const App = ({ Component, pageProps }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const wtf = () => {
+    setIsModalOpen(true)
+    console.log(isModalOpen ? 'Open!' : 'Not...open...')
+    console.log('isModalOpen', isModalOpen)
+  }
   return (
     <div className="app">
       <Head>
@@ -21,7 +28,10 @@ const App = ({ Component, pageProps }) => {
       <div className="main-container">
         <Component {...pageProps} />
       </div>
-      <ReferralModal isOpen={isModalOpen}>
+
+      <ReferralModal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)} />
+
+      {/* <ReferralModal isOpen={isModalOpen}>
         <div className="referral-modal-contents">
           <button className="close-modal" onClick={() => setIsModalOpen(false)}>
             X
@@ -31,7 +41,6 @@ const App = ({ Component, pageProps }) => {
             Enter a friend's first name and email and we'll send them an invitation to sign up.
           </p>
           <div>
-            {/* Assumes the user is registered and logged in*/}
             <Formik initialValues={{ friendsEmail: '', firstName: '' }} onSubmit={''}>
               {({ status, isSubmitting }) => {
                 return (
@@ -105,7 +114,6 @@ const App = ({ Component, pageProps }) => {
                       <br />
                       <span></span>5 days ago
                     </p>
-                    {/* <p>5 days ago</p> */}
                   </td>
                   <td>Last</td>
                 </tr>
@@ -153,7 +161,7 @@ const App = ({ Component, pageProps }) => {
             </div>
           </div>
         </div>
-      </ReferralModal>
+      </ReferralModal> */}
       <button className="referral-button" onClick={() => setIsModalOpen(true)}>
         Refer and Earn
       </button>
